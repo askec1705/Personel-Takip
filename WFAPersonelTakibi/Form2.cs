@@ -40,6 +40,7 @@ namespace WFAPersonelTakibi
                 .ToList();//bu durumda şu komutu yazmasak da olur ama bazı durumlarda gerekli
 
             //anonim tipler -- içeriğinin ne tür tipte olduğunun belli olmadığı yapılar. Yularıdaki x böyle. anlık olarak çözüm üretecek tipler. nesne.
+            Liste();
         }
 
         private void TsmSil_Click(object sender, EventArgs e)
@@ -64,6 +65,23 @@ namespace WFAPersonelTakibi
             Form4 frm4 = new Form4(personel);
             this.Hide();
             frm4.ShowDialog();
+        }
+
+
+        private void tsmYeni_Click(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            this.Hide();
+            frm1.ShowDialog();
+        }
+
+        private void tsmDetay_Click(object sender, EventArgs e)
+        {
+            Guid Id = (Guid)dgvEmployees.SelectedRows[0].Cells[0].Value;
+            Personel personel = Form1.Personeller.FirstOrDefault(x => x.Id == Id);
+            Form3 frm3 = new Form3(personel);
+            this.Hide();
+            frm3.ShowDialog();
         }
     }
 }

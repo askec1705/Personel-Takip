@@ -46,6 +46,7 @@
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.pcbImageUrl)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -229,14 +230,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personel Detay Paneli";
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(24, 382);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(124, 23);
+            this.metroLink1.TabIndex = 10;
+            this.metroLink1.Text = "Personel Listesi";
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 397);
+            this.ClientSize = new System.Drawing.Size(672, 410);
+            this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.pcbImageUrl);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbImageUrl)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -264,5 +277,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private System.Windows.Forms.GroupBox groupBox1;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }

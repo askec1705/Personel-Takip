@@ -19,6 +19,25 @@ namespace WFAPersonelTakibi
             InitializeComponent();
         }
 
+        public void Temizle(Control control)
+        {
+            foreach (Control item in control.Controls)
+            {
+                if (item is MetroTextBox)
+                {
+                    item.Text = "";
+                }
+                else if (item is MetroComboBox)
+                {
+                    item.Text = default;
+                }
+                if (item is MetroDateTime)
+                {
+                    item.Text = "";
+                }
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbDepartment.Items.AddRange(Enum.GetNames(typeof(Department)));
@@ -39,6 +58,8 @@ namespace WFAPersonelTakibi
             personel.BirthDate = dtBirthDate.Value;
 
             personel.Department = (Department)Enum.Parse(typeof(Department), cmbDepartment.Text);
+
+            
 
             #region Uzun yol
             //if (rdFemale.Checked)
@@ -74,6 +95,9 @@ namespace WFAPersonelTakibi
             }
 
             Personeller.Add(personel);
+
+            Temizle(groupBox1);
+            
         }
         #endregion
 
@@ -109,6 +133,5 @@ namespace WFAPersonelTakibi
             this.Hide();
             frm.ShowDialog();
         }
-
     }
 }
