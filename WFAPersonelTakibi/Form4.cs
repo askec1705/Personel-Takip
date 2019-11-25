@@ -56,6 +56,10 @@ namespace WFAPersonelTakibi
             txtMail.Text = personel.Mail;
             cmbDepartment.Text = personel.Department.ToString();
 
+            MetroRadioButton rd = (MetroRadioButton)metroPanel1.Controls.Find(("rd" + personel.Gender.ToString()), false)[0];
+            rd.Checked = true;
+            pcbImageUrl.Image = Image.FromFile(Environment.CurrentDirectory + @"\..\..\img" + personel.ImageUrl);
+
 
         }
 

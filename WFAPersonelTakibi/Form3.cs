@@ -35,6 +35,9 @@ namespace WFAPersonelTakibi
             lblMail.Text = personel.Mail;
             lblDepartment.Text = personel.Department.ToString();
             lblGender.Text = personel.Gender.ToString();
+
+            pcbImageUrl.Image = Image.FromFile(Environment.CurrentDirectory + @"C:\Users\ahmet.kaya\Desktop\Projeler\Personel-Takip\WFAPersonelTakibi\img" + personel.ImageUrl);
+
             
         }
 
